@@ -45,12 +45,12 @@ transf = pickle.load(open('transform.pkl', 'rb'))
 app = Flask(__name__)
 
 @app.route('/')
-def man():
-    return render_template('home.html')
+def index():
+    return render_template('index.html', data=0)
 
 
 @app.route('/predict', methods=['POST'])
-def home():
+def predict():
     place = request.form['b']
     
     data1 = request.form['a']
@@ -136,7 +136,7 @@ def home():
     else:
         pred = 'wrong input'
     
-    return render_template('home.html', data=int(pred[0,0]), date = data1, month = month, place = place.lower())
+    return render_template('index.html', data=int(pred[0,0]), date = data1, month = month, place = place.lower())
 
 
 if __name__ == "__main__":

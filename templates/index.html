@@ -11,12 +11,12 @@
     <main class="bg-white p-16 rounded-lg">
       <h1 class="text-3xl font-bold mb-8">Prediksi Kasus Coronavirus di Indonesia</h1>
 
-      <form action="{{ url_for('home') }}" method="POST" class="flex flex-col">
+      <form action="{{ url_for('predict') }}" method="POST" class="flex flex-col">
         <label for="Tempat" class="mb-2">Tempat</label>
-        <input type="text" name="b" placeholder="Indonesia / nama Provinsi" required="required" class="p-4 bg-gray-100 rounded-md" />
+        <input type="text" name="b" placeholder="indonesia / nama provinsi" required="required" class="p-4 bg-gray-100 rounded-md" />
 
         <label for="Bulan" class="mb-2">Bulan</label>
-        <input type="text" name="c" placeholder="cth : september / oktober, dst" required="required" class="p-4 bg-gray-100 rounded-md" />
+        <input type="text" name="c" placeholder="cth : juni / juli, dst" required="required" class="p-4 bg-gray-100 rounded-md" />
 
         <label for="Month" class="mb-2">Tanggal</label>
         <input type="number" name="a" placeholder="masukkan tanggal" required="required" class="p-4 bg-gray-100 rounded-md" />
