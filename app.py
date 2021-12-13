@@ -49,7 +49,7 @@ def index():
     return render_template('index.html', data=0)
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict/', methods=['POST'])
 def predict():
     place = request.form['b']
     
