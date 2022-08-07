@@ -48,7 +48,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html', data=0)
 
-
 @app.route('/predict/', methods=['POST'])
 def predict():
     place = request.form['b']
@@ -56,87 +55,87 @@ def predict():
     data1 = request.form['a']
     
     month = request.form['c']
-    if month.lower() == 'september':
+    if month == 'agustus':
         data2 = int(data1) + int(214)
     else:
         data2 = int(data1) + int(244)
     
     transformed_data = transf.transform([[data2]])
 
-    if place.lower() == 'indonesia':
+    if place == 'Indonesia':
         pred = model.predict(transformed_data)
-    elif (place.lower() == 'aceh') :
+    elif (place == 'Aceh') :
         pred = ac.predict(transformed_data)
-    elif (place.lower() == 'bali') :
+    elif (place == 'Bali') :
         pred = bl.predict(transformed_data)
-    elif (place.lower() == 'banten') :
+    elif (place == 'Banten') :
         pred = btn.predict(transformed_data)
-    elif (place.lower() == 'babel') | (place.lower() == 'bangka belitung') :
+    elif (place == 'babel') | (place == 'Kep. Bangka Belitung') :
         pred = bbl.predict(transformed_data)
-    elif (place.lower() == 'bengkulu') :
+    elif (place == 'Bengkulu') :
         pred = bngk.predict(transformed_data)
-    elif (place.lower() == 'diy') | (place.lower() == 'yogyakarta') :
+    elif (place == 'diy') | (place == 'DI Yogyakarta') :
         pred = diy.predict(transformed_data)
-    elif (place.lower() == 'jakarta') :
+    elif (place == 'DKI Jakarta') :
         pred = jkt.predict(transformed_data)
-    elif (place.lower() == 'jambi') :
+    elif (place == 'Jambi') :
         pred = jmb.predict(transformed_data)
-    elif (place.lower() == 'jabar') | (place.lower() == 'jawa barat'):
+    elif (place == 'jabar') | (place == 'Jawa Barat'):
         pred = jbr.predict(transformed_data)
-    elif (place.lower() == 'jateng') | (place.lower() == 'jawa tengah'):
+    elif (place == 'jateng') | (place == 'Jawa Tengah'):
         pred = jtn.predict(transformed_data)
-    elif (place.lower() == 'jatim') | (place.lower() == 'jawa timur'):
+    elif (place == 'jatim') | (place == 'Jawa Timur'):
         pred = jtm.predict(transformed_data)
-    elif (place.lower() == 'kalbar') | (place.lower() == 'kalimantan barat'):
+    elif (place == 'kalbar') | (place == 'Kalimantan Barat'):
         pred = klbr.predict(transformed_data)
-    elif (place.lower() == 'kaltim') | (place.lower() == 'kalimantan timur'):
+    elif (place == 'kaltim') | (place == 'Kalimantan Timur'):
         pred = kltm.predict(transformed_data)
-    elif (place.lower() == 'kalteng') | (place.lower() == 'kalimantan tengah'):
+    elif (place == 'kalteng') | (place == 'Kalimantan Tengah'):
         pred = kltng.predict(transformed_data)
-    elif (place.lower() == 'kalsel') | (place.lower() == 'kalimantan selatan'):
+    elif (place == 'kalsel') | (place == 'Kalimantan Selatan'):
         pred = klsl.predict(transformed_data)
-    elif (place.lower() == 'kaltara') | (place.lower() == 'kalimantan utara'):
+    elif (place == 'kaltara') | (place == 'Kalimantan Utara'):
         pred = kltu.predict(transformed_data)
-    elif (place.lower() == 'kep riau') | (place.lower() == 'kepulauan riau'):
+    elif (place == 'Kep. Riau') | (place == 'kepulauan riau'):
         pred = kria.predict(transformed_data)
-    elif (place.lower() == 'ntb') :
+    elif (place == 'Nusa Tenggara Barat') :
         pred = ntb.predict(transformed_data)
-    elif (place.lower() == 'sumsel') | (place.lower() == 'sumatra selatan'):
+    elif (place == 'sumsel') | (place == 'Sumatra Selatan'):
         pred = smsl.predict(transformed_data)
-    elif (place.lower() == 'sumbar') | (place.lower() == 'sumatra barat'):
+    elif (place == 'sumbar') | (place == 'Sumatra Barat'):
         pred = smbr.predict(transformed_data)
-    elif (place.lower() == 'sulut') | (place.lower() == 'sulawesi utara'):
+    elif (place == 'sulut') | (place == 'Sulawesi Utara'):
         pred = slt.predict(transformed_data)
-    elif (place.lower() == 'sumut') | (place.lower() == 'sumatra utara'):
+    elif (place == 'sumut') | (place == 'Sumatra Utara'):
         pred = smut.predict(transformed_data)
-    elif (place.lower() == 'sultra') | (place.lower() == 'sulawesi tenggara'):
+    elif (place == 'sultra') | (place == 'Sulawesi Tenggara'):
         pred = sltr.predict(transformed_data)
-    elif (place.lower() == 'sulsel') | (place.lower() == 'sulawesi selatan'):
+    elif (place == 'sulsel') | (place == 'Sulawesi Selatan'):
         pred = slsl.predict(transformed_data)
-    elif (place.lower() == 'sulteng') | (place.lower() == 'sulawesi tengah'):
+    elif (place == 'sulteng') | (place == 'Sulawesi Tengah'):
         pred = sltg.predict(transformed_data)
-    elif (place.lower() == 'lampung') :
+    elif (place == 'Lampung') :
         pred = lmpg.predict(transformed_data)
-    elif (place.lower() == 'riau') :
+    elif (place == 'Riau') :
         pred = ria.predict(transformed_data)
-    elif (place.lower() == 'malut') | (place.lower() == 'maluku utara'):
+    elif (place == 'malut') | (place == 'Maluku Utara'):
         pred = malut.predict(transformed_data)
-    elif (place.lower() == 'maluku') :
+    elif (place == 'Maluku') :
         pred = mlku.predict(transformed_data)
-    elif (place.lower() == 'papbar') | (place.lower() == 'papua barat'):
+    elif (place == 'papbar') | (place == 'Papua Barat'):
         pred = papbr.predict(transformed_data)
-    elif (place.lower() == 'papua') :
+    elif (place == 'Papua') :
         pred = ppa.predict(transformed_data)
-    elif (place.lower() == 'sulbar') | (place.lower() == 'sulawesi barat'):
+    elif (place == 'sulbar') | (place == 'Sulawesi Barat'):
         pred = slbr.predict(transformed_data)
-    elif (place.lower() == 'ntt') :
+    elif (place == 'Nusa Tenggara Timur') :
         pred = ntt.predict(transformed_data)
-    elif (place.lower() == 'gorontalo') :
+    elif (place == 'Gorontalo') :
         pred = grtl.predict(transformed_data)
     else:
         pred = 'wrong input'
     
-    return render_template('index.html', data=int(pred[0,0]), date = data1, month = month, place = place.lower())
+    return render_template('index.html', data=int(pred[0,0]), date = data1, month = month, place = place)
 
 
 if __name__ == "__main__":
