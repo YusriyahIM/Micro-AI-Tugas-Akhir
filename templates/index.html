@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <meta name="author" content="Dashboard" />
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
+    <meta name="description" content="Prediksi kasus COVID-19 di Indonesia menggunakan Linear Regression selama 3 bulan ke depan" />
+    <meta name="author" content="Yusriyah IM" />
+    <meta name="keyword" content="Covid 19, Prediksi, Indonesia" />
     <title>Prediksi Kasus Covid 19</title>
 
     <!-- Favicons -->
@@ -32,9 +32,9 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="d-flex align-items-center justify-content-between">
-        <a href="" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <img src="{{ url_for('static', filename='assets/img/coronavirus-icon.png') }}" alt="" />
-          <span class="d-none d-lg-block">Kelompok 2 Amikom-01</span>
+          <span class="d-none d-lg-block">COVID 19 Indonesia</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
@@ -46,7 +46,7 @@
     <aside id="sidebar" class="sidebar">
       <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="">
+          <a href="/" class="nav-link">
             <i class="bi bi-house-door-fill"></i>
             <span>Prediksi Kasus Covid 19</span>
           </a>
@@ -62,21 +62,65 @@
           <div class="col-lg-6">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Prediksi Kasus Coronavirus di Indonesia</h5>
+                <h5 class="card-title">Prediksi Kasus Coronavirus di Indonesia Tahun 2022</h5>
 
                 <!-- Prediksi Kasus Coronavirus di Indonesia Form -->
                 <form class="row g-3" action="{{ url_for('predict') }}" method="POST">
                   <div class="col-12">
                     <label for="Tempat" class="form-label">Tempat</label>
-                    <input type="text" class="form-control" name="b" placeholder="indonesia / nama provinsi" required="required" />
+                    <!-- <input type="text" class="form-control" name="b" placeholder="indonesia / nama provinsi" required="required" /> -->
+                    <select id="b" class="form-select" name="b" placeholder="indonesia / nama provinsi" required="required">
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Aceh">Aceh</option>
+                      <option value="Bali">Bali</option>
+                      <option value="Banten">Banten</option>
+                      <option value="Kep. Bangka Belitung">Kep. Bangka Belitung</option>
+                      <option value="Bengkulu">Bengkulu</option>
+                      <option value="DI Yogyakarta">DI Yogyakarta</option>
+                      <option value="DKI Jakarta">DKI Jakarta</option>
+                      <option value="Jambi">Jambi</option>
+                      <option value="Jawa Barat">Jawa Barat</option>
+                      <option value="Jawa Tengah">Jawa Tengah</option>
+                      <option value="Jawa Timut">Jawa Timur</option>
+                      <option value="Kalimantan Barat">Kalimantan Barat</option>
+                      <option value="Kalimantan Timur">Kalimantan Timur</option>
+                      <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                      <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                      <option value="Kalimantan Utara">Kalimantan Utara</option>
+                      <option value="Kep. Riau">Kep. Riau</option>
+                      <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                      <option value="Sumatera Selatan">Sumatera Selatan</option>
+                      <option value="Sumatera Barat">Sumatera Barat</option>
+                      <option value="Sulawesi Utara">Sulawesi Utara</option>
+                      <option value="Sumatera Utara">Sumatera Utara</option>
+                      <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                      <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                      <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                      <option value="Lampung">Lampung</option>
+                      <option value="Rriau">Riau</option>
+                      <option value="Maluku Utara">Maluku Utara</option>
+                      <option value="Maluku">Maluku</option>
+                      <option value="Papua Barat">Papua Barat</option>
+                      <option value="Papua">Papua</option>
+                      <option value="Sulawesi Barat">Sulawesi Barat</option>
+                      <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                      <option value="Gorontalo">Gorontalo</option>
+                    </select>
                   </div>
                   <div class="col-12">
                     <label for="Month" class="form-label">Bulan</label>
-                    <input type="text" class="form-control" name="c" placeholder="cth : juni / juli, dst" required="required" />
+                    <!-- <input type="text" class="form-control" name="c" placeholder="cth : juni / juli, dst" required="required" /> -->
+                    <select id="c" class="form-select" name="c" placeholder="cth : juni / juli, dst" required="required">
+                      <option value="agustus">Agustus</option>
+                      <option value="september">September</option>
+                      <option value="oktober">Oktober</option>
+                      <option value="november">November</option>
+                      <option value="desember">Desember</option>
+                    </select>
                   </div>
                   <div class="col-12">
                     <label for="Month" class="form-label">Tanggal</label>
-                    <input type="number" class="form-control" name="a" placeholder="masukkan tanggal" required="required" />
+                    <input type="number" class="form-control" name="a" placeholder="masukkan tanggal (1-31)" required="required" />
                   </div>
                   <div class="text-center">
                     <button type="reset" class="btn btn-secondary">Reset</button>
@@ -105,18 +149,16 @@
             </div>
           </div>
           <!-- Prediksi Kasus Coronavirus di Indonesia result  -->
+          {% if (data) != 0 %} {%if data != 0%}
           <div class="col-lg-6">
             <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Prediksi kasus di {{ place }} pada tanggal {{ date }} {{ month }} :</h3>
-                {% if (data) != 0 %} {%if data != 0%}
-                <h1 class="card-title">{{ data }}</h1>
-
+              <div class="card-body">                
+                <h3 class="card-title">Prediksi penambahan kasus positif di {{ place }} pada tanggal {{ date }} {{ month }} 2022 :</h3>
+                <p><strong style="font-size: 20px;">{{ data }}</strong> kasus</p>
                 {%else%}
                 <h1 class="card-title">Invalid Entry</h1>
-
-                {%endif%} {% endif %}
-                <p>Total Kasus Terkonfirmasi</p>
+                {%endif%}
+                {% endif %}
               </div>
             </div>
           </div>
@@ -129,18 +171,11 @@
     <!-- ======= Footer ======= -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="margin-bottom: 0px; position: fixed; width: 100%; bottom: 0px;">
       <div class="copyright">
-        &copy; Copyright <strong><span>Yusriyah Isnaini Mufidah - Kelompok 2 - Amikom 01</span></strong
-        >. All Rights Reserved
+        &copy; Copyright <strong><span>Yusriyah IM</span></strong>  
+         <!-- All Rights Reserved -->
       </div>
-      <!-- <div class="credits"> -->
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div> -->
     </footer>
     <!-- End Footer -->
 
